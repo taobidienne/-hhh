@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fake Hack FF Menu</title>
+  <style>
+    body {
+      background: #000;
+      color: #0f0;
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+    }
+    #toggleButton {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: #222;
+      color: lime;
+      padding: 10px 20px;
+      border: 2px solid lime;
+      cursor: pointer;
+      z-index: 999;
+    }
+    #menu {
+      position: fixed;
+      top: 50px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.9);
+      border: 2px solid lime;
+      padding: 20px;
+      display: none;
+      z-index: 998;
+      max-height: 90%;
+      overflow-y: scroll;
+    }
+    .option {
+      margin-bottom: 8px;
+    }
+    .option input {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="toggleButton">BẬT MENU HACK</button>
+
+<div id="menu">
+  <h3>MENU HACK FREE FIRE - 30 CHỨC NĂNG</h3>
+  <div id="options"></div>
+</div>
+
+<script>
+  const functions = [
+    "Aimbot", "Wall Hack", "Tăng Tốc Chạy", "Tăng Nhảy", "Xuyên Vật Thể",
+    "ESP Kẻ Địch", "Hack Kim Cương", "Auto Headshot", "No Recoil",
+    "Speed Fire", "Teleport", "Hack Skin", "Hack Vàng", "Bắn Xuyên Tường",
+    "Invisible", "ESP Vũ Khí", "Hack Map", "Auto Kill", "Fly Hack",
+    "Hack Pet", "Hack Bo", "Auto Heal", "Super Jump", "Hack Xe",
+    "Night Vision", "Fake Rank", "Speed Reload", "No Fall Damage", 
+    "Auto Aim", "Anti Ban"
+  ];
+
+  const optionsDiv = document.getElementById("options");
+  functions.forEach(func => {
+    const div = document.createElement("div");
+    div.className = "option";
+    div.innerHTML = `<input type="checkbox"> ${func}`;
+    optionsDiv.appendChild(div);
+  });
+
+  const toggleButton = document.getElementById("toggleButton");
+  const menu = document.getElementById("menu");
+  toggleButton.onclick = () => {
+    menu.style.display = menu.style.display === "none" ? "block" : "none";
+  };
+</script>
+
+</body>
+</html>
